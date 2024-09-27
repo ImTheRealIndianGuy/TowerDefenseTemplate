@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6tt7jhp5brw"]
+
+[ext_resource type="Texture2D" uid="uid://bewpwfbue5jnj" path="res://Assets/Pixel-Art-Castle-2.webp" id="1_28015"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kot2y"]
+size = Vector2(235, 198)
+
+[node name="Tower" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -125)
+shape = SubResource("RectangleShape2D_kot2y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-10, -785)
+offset = Vector2(0, 1)
+zoom = Vector2(0.185, 0.185)
+
+[node name="tower" type="Sprite2D" parent="."]
+position = Vector2(4, -482)
+texture = ExtResource("1_28015")

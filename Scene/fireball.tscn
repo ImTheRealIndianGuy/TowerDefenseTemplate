@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw5ho7wofccpe"]
+
+[ext_resource type="Texture2D" uid="uid://bl50mrjcpmt7t" path="res://Assets/pixel-art-fireball-game-icons-600w-1482769895.webp" id="1_7v4ck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqnev"]
+atlas = ExtResource("1_7v4ck")
+region = Rect2(100, 0, 100, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy2a8"]
+atlas = ExtResource("1_7v4ck")
+region = Rect2(200, 0, 100, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb2hb"]
+atlas = ExtResource("1_7v4ck")
+region = Rect2(300, 0, 100, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixxce"]
+atlas = ExtResource("1_7v4ck")
+region = Rect2(400, 0, 100, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0852"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqnev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy2a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb2hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixxce")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gj2ao"]
+radius = 162.274
+
+[node name="Fireball" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(135.75, 143.25)
+scale = Vector2(2.485, 2.64674)
+sprite_frames = SubResource("SpriteFrames_p0852")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(140, 135)
+shape = SubResource("CircleShape2D_gj2ao")
